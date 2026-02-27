@@ -3,8 +3,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/global/SmoothScroll";
 import CustomCursor from "@/components/global/CustomCursor";
+import CursorTrail from "@/components/global/CursorTrail";
 import Background3D from "@/components/global/Background3D";
 import FloatingDock from "@/components/global/FloatingDock";
+import ScrollProgressBar from "@/components/global/ScrollProgressBar";
 import ServiceWorkerRegistrar from "@/components/global/ServiceWorkerRegistrar";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
@@ -67,9 +69,11 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Vansh" />
       </head>
       <body className={`${inter.className} min-h-screen bg-transparent antialiased`}>
+        <ScrollProgressBar />
         <ServiceWorkerRegistrar />
         <SmoothScroll>
           <CustomCursor />
+          <CursorTrail />
           <Background3D />
           <FloatingDock />
           <main className="relative z-10 w-full flex flex-col items-center">
