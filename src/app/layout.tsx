@@ -8,6 +8,10 @@ import Background3D from "@/components/global/Background3D";
 import FloatingDock from "@/components/global/FloatingDock";
 import ScrollProgressBar from "@/components/global/ScrollProgressBar";
 import ServiceWorkerRegistrar from "@/components/global/ServiceWorkerRegistrar";
+import ThemeToggle from "@/components/global/ThemeToggle";
+import SoundToggle from "@/components/global/SoundToggle";
+import KonamiCode from "@/components/global/KonamiCode";
+import JsonLd from "@/components/global/JsonLd";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -31,6 +35,7 @@ export const metadata: Metadata = {
   keywords: [
     "Vansh Agnihotri", "React Developer", "Next.js", "Portfolio",
     "BCA Student", "Frontend Developer", "Three.js", "AI Developer",
+    "UI/UX", "Webflow", "India",
   ],
   authors: [{ name: "Vansh Agnihotri", url: BASE_URL }],
   creator: "Vansh Agnihotri",
@@ -40,7 +45,7 @@ export const metadata: Metadata = {
     url: BASE_URL,
     siteName: "Vansh Agnihotri Portfolio",
     title: "Vansh Agnihotri — Next-Level Portfolio",
-    description: "BCA Student, React Developer & Digital Creator.",
+    description: "BCA Student, React Developer & Digital Creator building next-level web experiences.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Vansh Agnihotri" }],
   },
   twitter: {
@@ -67,15 +72,19 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Vansh" />
+        <JsonLd />
       </head>
       <body className={`${inter.className} min-h-screen bg-transparent antialiased`}>
         <ScrollProgressBar />
         <ServiceWorkerRegistrar />
+        <KonamiCode />
         <SmoothScroll>
           <CustomCursor />
           <CursorTrail />
           <Background3D />
           <FloatingDock />
+          <ThemeToggle />
+          <SoundToggle />
           <main className="relative z-10 w-full flex flex-col items-center">
             {children}
           </main>
