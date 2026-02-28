@@ -16,9 +16,11 @@ export default function CustomCursor() {
     const cursorYSpring = useSpring(cursorY, springConfig);
 
     useEffect(() => {
-        // Initialization does not need setState in effect
-        const match = window.matchMedia("(hover: none)").matches || window.innerWidth < 768;
-        if (match !== isTouch) setIsTouch(match);
+        // Initialization
+        const initTimer = setTimeout(() => {
+            const match = window.matchMedia("(hover: none)").matches || window.innerWidth < 768;
+            if (match !== isTouch) setIsTouch(match);
+        }, 0);
 
         const updateMousePosition = (e: MouseEvent) => {
             cursorX.set(e.clientX);
@@ -43,10 +45,11 @@ export default function CustomCursor() {
         window.addEventListener("mouseover", handleMouseOver);
 
         return () => {
+            clearTimeout(initTimer);
             window.removeEventListener("mousemove", updateMousePosition);
             window.removeEventListener("mouseover", handleMouseOver);
         };
-    }, [cursorX, cursorY]);
+    }, [cursorX, cursorY, isTouch]);
 
     if (isTouch) return null;
 

@@ -54,7 +54,7 @@ export default function HireForm() {
             >
                 <CheckCircle className="mx-auto mb-4 text-green-400" size={48} />
                 <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
-                <p className="text-gray-400">I'll get back to you within 24 hours.</p>
+                <p className="text-gray-400">I&apos;ll get back to you within 24 hours.</p>
             </motion.div>
         );
     }

@@ -10,8 +10,10 @@ export default function ThemeToggle() {
     useEffect(() => {
         const saved = localStorage.getItem("theme");
         if (saved === "light" && !light) {
-            setLight(true);
-            document.documentElement.classList.add("light");
+            setTimeout(() => {
+                setLight(true);
+                document.documentElement.classList.add("light");
+            }, 0);
         }
     }, [light]);
 
