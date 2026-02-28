@@ -1,142 +1,121 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Terminal, Send, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Calendar, Briefcase, Github, Linkedin, ArrowUpRight } from "lucide-react";
+import HireForm from "@/components/global/HireForm";
+import Magnetic from "@/components/global/Magnetic";
 
 export default function ContactPage() {
-    const [inputVal, setInputVal] = useState("");
-    const [history, setHistory] = useState([
-        { type: "system", text: "Welcome to VanshOS v2.4. Type 'help' to see available commands." }
-    ]);
-    const bottomRef = useRef<HTMLDivElement>(null);
-
-    const handleCommand = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!inputVal.trim()) return;
-
-        const cmd = inputVal.trim().toLowerCase();
-        const newHistory = [...history, { type: "user", text: `> ${inputVal}` }];
-
-        switch (cmd) {
-            case "help":
-                newHistory.push({ type: "system", text: "Available commands: info, contact, clear, social" });
-                break;
-            case "info":
-                newHistory.push({ type: "system", text: "Vansh Agnihotri - BCA 2nd Yr. React Developer. Building next-level experiences." });
-                break;
-            case "contact":
-                newHistory.push({ type: "system", text: "Email: vanshagnihotri520@gmail.com | Phone: 9569534925" });
-                break;
-            case "social":
-                newHistory.push({ type: "system", text: "Instagram: vansh_agnihotri____ | LinkedIn: Vansh Agnihotri" });
-                break;
-            case "clear":
-                setHistory([]);
-                setInputVal("");
-                return;
-            default:
-                newHistory.push({ type: "error", text: `Command not found: ${cmd}. Type 'help' for options.` });
-        }
-
-        setHistory(newHistory);
-        setInputVal("");
-    };
-
-    useEffect(() => {
-        if (bottomRef.current) {
-            bottomRef.current.scrollIntoView({ behavior: "smooth" });
-        }
-    }, [history]);
-
     return (
-        <div className="w-full min-h-screen px-4 md:px-24 pt-32 pb-40 flex flex-col lg:flex-row gap-12 items-center justify-center">
+        <div className="w-full min-h-screen px-4 md:px-24 pt-24 md:pt-32 pb-40">
+            <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16">
 
-            {/* Traditional Contact Info Grid */}
-            <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="w-full lg:w-1/2 flex flex-col"
-            >
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-white text-glow">
-                    Initiate Contact.
-                </h1>
-                <p className="text-gray-400 text-lg mb-12 max-w-md">
-                    Whether it's a freelance gig, an internship opportunity, or just a technical discussion, I'm always open to connect.
-                </p>
+                {/* Info Section */}
+                <motion.div
+                    initial={{ opacity: 0, x: -40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="w-full lg:w-5/12 flex flex-col"
+                >
+                    <span className="font-mono text-sm tracking-widest uppercase text-gray-500 mb-2">Let's Connect</span>
+                    <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter mb-6 text-white text-glow">
+                        Get in Touch
+                    </h1>
+                    <p className="text-gray-400 text-base md:text-lg mb-12">
+                        I'm always interested in new opportunities, collaborations, and interesting projects. Let's discuss how we can work together!
+                    </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-lg">
-                    <a href="mailto:vanshagnihotri520@gmail.com" className="glass p-6 rounded-2xl flex flex-col items-center justify-center gap-4 hover:bg-white/10 transition group cursor-none">
-                        <Mail className="text-gray-400 group-hover:text-white transition-colors" size={32} />
-                        <span className="text-white font-medium">Email Me</span>
-                    </a>
-
-                    <a href="tel:+919569534925" className="glass p-6 rounded-2xl flex flex-col items-center justify-center gap-4 hover:bg-white/10 transition group cursor-none">
-                        <Phone className="text-gray-400 group-hover:text-white transition-colors" size={32} />
-                        <span className="text-white font-medium">9569534925</span>
-                    </a>
-
-                    <a href="#" target="_blank" rel="noreferrer" className="glass p-6 rounded-2xl flex flex-col items-center justify-center gap-4 hover:bg-white/10 transition group cursor-none">
-                        <Instagram className="text-gray-400 group-hover:text-[#E1306C] transition-colors" size={32} />
-                        <span className="text-white font-medium">@vansh_agnihotri____</span>
-                    </a>
-
-                    <a href="#" target="_blank" rel="noreferrer" className="glass p-6 rounded-2xl flex flex-col items-center justify-center gap-4 hover:bg-white/10 transition group cursor-none">
-                        <Linkedin className="text-gray-400 group-hover:text-[#0077b5] transition-colors" size={32} />
-                        <span className="text-white font-medium">LinkedIn</span>
-                    </a>
-                </div>
-            </motion.div>
-
-            {/* Interactive Terminal */}
-            <motion.div
-                initial={{ opacity: 0, x: 40 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="w-full lg:w-1/2"
-            >
-                <div className="glass w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden flex flex-col border border-white/20 shadow-2xl">
-                    {/* Terminal Header */}
-                    <div className="w-full h-12 bg-black/40 border-b border-white/10 flex items-center px-4 gap-2">
-                        <div className="w-3 h-3 rounded-full bg-red-500" />
-                        <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                        <div className="w-3 h-3 rounded-full bg-green-500" />
-                        <span className="ml-4 font-mono text-xs text-gray-400 flex items-center gap-2">
-                            <Terminal size={12} /> guest@vansh-os:~
-                        </span>
-                    </div>
-
-                    {/* Terminal Body */}
-                    <div className="flex-1 p-6 overflow-y-auto font-mono text-sm leading-relaxed flex flex-col gap-2">
-                        {history.map((line, i) => (
-                            <div
-                                key={i}
-                                className={`${line.type === 'system' ? 'text-green-400' : line.type === 'user' ? 'text-white' : 'text-red-400'}`}
-                            >
-                                {line.text}
+                    <div className="space-y-10">
+                        {/* Direct Contact */}
+                        <div>
+                            <h3 className="text-white font-semibold mb-4 text-xl flex items-center gap-2">Contact Info</h3>
+                            <div className="space-y-4">
+                                <a href="mailto:ashwin2431333@gmail.com" className="flex items-start gap-4 group cursor-none">
+                                    <div className="glass w-12 h-12 flex items-center justify-center rounded-full group-hover:bg-white/10 transition">
+                                        <Mail className="text-gray-400 group-hover:text-white transition" size={20} />
+                                    </div>
+                                    <div>
+                                        <div className="text-gray-500 text-sm font-mono tracking-widest uppercase mb-1">Email</div>
+                                        <div className="text-white">ashwin2431333@gmail.com</div>
+                                    </div>
+                                </a>
+                                <a href="tel:+919555681211" className="flex items-start gap-4 group cursor-none">
+                                    <div className="glass w-12 h-12 flex items-center justify-center rounded-full group-hover:bg-white/10 transition">
+                                        <Phone className="text-gray-400 group-hover:text-white transition" size={20} />
+                                    </div>
+                                    <div>
+                                        <div className="text-gray-500 text-sm font-mono tracking-widest uppercase mb-1">Phone</div>
+                                        <div className="text-white">+91 95556 81211</div>
+                                    </div>
+                                </a>
+                                <div className="flex items-start gap-4 group">
+                                    <div className="glass w-12 h-12 flex items-center justify-center rounded-full transition">
+                                        <MapPin className="text-gray-400" size={20} />
+                                    </div>
+                                    <div>
+                                        <div className="text-gray-500 text-sm font-mono tracking-widest uppercase mb-1">Location</div>
+                                        <div className="text-white">Kanpur, UP, India</div>
+                                    </div>
+                                </div>
                             </div>
-                        ))}
-                        <div ref={bottomRef} />
-                    </div>
+                        </div>
 
-                    {/* Terminal Input */}
-                    <form onSubmit={handleCommand} className="w-full bg-black/20 p-4 border-t border-white/10 flex items-center gap-2">
-                        <span className="text-green-400 font-mono">$&gt;</span>
-                        <input
-                            type="text"
-                            value={inputVal}
-                            onChange={(e) => setInputVal(e.target.value)}
-                            className="flex-1 bg-transparent outline-none text-white font-mono placeholder:text-white/20"
-                            placeholder="Type a command..."
-                            autoFocus
-                        />
-                        <button type="submit" className="text-gray-400 hover:text-white transition cursor-none p-2">
-                            <Send size={16} />
-                        </button>
-                    </form>
-                </div>
-            </motion.div>
+                        {/* Availability */}
+                        <div>
+                            <h3 className="text-white font-semibold mb-4 text-xl">Availability Status</h3>
+                            <div className="glass rounded-2xl p-5 space-y-4 border border-white/5">
+                                <div className="flex items-center justify-between border-b border-white/5 pb-3">
+                                    <div className="flex items-center gap-2 text-gray-400"><Clock size={16} /> <span className="text-sm">Response Time</span></div>
+                                    <span className="text-white text-sm font-medium">Within 24 hours</span>
+                                </div>
+                                <div className="flex items-center justify-between border-b border-white/5 pb-3">
+                                    <div className="flex items-center gap-2 text-gray-400"><Calendar size={16} /> <span className="text-sm">Availability</span></div>
+                                    <span className="text-white text-sm font-medium">Weekdays & Weekends</span>
+                                </div>
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-2 text-gray-400"><Briefcase size={16} /> <span className="text-sm">Current Status</span></div>
+                                    <div className="flex items-center gap-2">
+                                        <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                                        <span className="text-green-400 text-sm font-medium">Actively Looking</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Social Links */}
+                        <div>
+                            <h3 className="text-white font-semibold mb-4 text-xl">Find Me Online</h3>
+                            <div className="flex gap-4">
+                                <Magnetic>
+                                    <a href="https://github.com/Ashwinjauhary" target="_blank" rel="noreferrer" className="glass px-5 py-3 rounded-full flex items-center gap-2 hover:bg-white/10 transition cursor-none group border border-white/5">
+                                        <Github size={18} className="text-gray-400 group-hover:text-white transition" />
+                                        <span className="text-white text-sm font-medium">GitHub</span>
+                                        <ArrowUpRight size={14} className="text-gray-500 group-hover:text-white transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                    </a>
+                                </Magnetic>
+                                <Magnetic>
+                                    <a href="#" target="_blank" rel="noreferrer" className="glass px-5 py-3 rounded-full flex items-center gap-2 hover:bg-[#0077b5]/20 transition cursor-none group border border-white/5">
+                                        <Linkedin size={18} className="text-gray-400 group-hover:text-[#0077b5] transition" />
+                                        <span className="text-white text-sm font-medium">LinkedIn</span>
+                                        <ArrowUpRight size={14} className="text-gray-500 group-hover:text-[#0077b5] transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                    </a>
+                                </Magnetic>
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
+
+                {/* Form Section */}
+                <motion.div
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="w-full lg:w-7/12"
+                >
+                    <HireForm />
+                </motion.div>
+
+            </div>
         </div>
     );
 }

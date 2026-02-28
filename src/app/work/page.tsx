@@ -7,68 +7,148 @@ import { useState } from "react";
 
 const allProjects = [
     {
-        title: "Ganga Scavenger Dashboard",
-        slug: "ganga-scavenger",
-        role: "Frontend Engineer",
-        year: "2024",
-        tags: ["React", "IoT", "WebRTC", "PWA"],
-        description: "Real-time autonomous river-cleaning robot mission control. Live telemetry, video feed, GPS map, and AI debris detection dashboard with PWA offline support.",
-        image: "https://images.unsplash.com/photo-1620021676839-4d6d7bb5f7f0?q=80&w=2070&auto=format&fit=crop",
-        featured: true,
-    },
-    {
-        title: "AI Crime Predictor",
-        slug: "ai-crime-predictor",
-        role: "Full-Stack Dev",
-        year: "2024",
-        tags: ["Python", "FastAPI", "ML", "React"],
-        description: "Machine learning model that predicts crime hotspots using historical data, time patterns, and geospatial analysis with an interactive heatmap dashboard.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-        featured: true,
-    },
-    {
-        title: "Eye Mouse Control",
-        slug: "eye-mouse-control",
-        role: "Systems Dev",
-        year: "2023",
-        tags: ["Python", "OpenCV", "MediaPipe", "Accessibility"],
-        description: "Hands-free computer control using eye gaze tracking with MediaPipe face mesh. Enables people with motor disabilities to operate a computer using only their eyes.",
-        image: "https://images.unsplash.com/photo-1579567761406-4684ee0c75b6?q=80&w=2000&auto=format&fit=crop",
-        featured: false,
-    },
-    {
-        title: "Network Threat Detector",
-        slug: "network-sniffer",
-        role: "Systems Dev",
-        year: "2024",
-        tags: ["Python", "Scapy", "Security", "TUI"],
-        description: "Real-time network packet sniffer with threat detection engine, a rich terminal dashboard, and alerting for port scans, ARP spoofing, and DDoS patterns.",
-        image: "https://images.unsplash.com/photo-1551893665-f843f600794e?q=80&w=2127&auto=format&fit=crop",
-        featured: false,
-    },
-    {
-        title: "3D Portfolio v1",
-        slug: "portfolio-3d",
-        role: "Creative Dev",
-        year: "2024",
-        tags: ["Three.js", "R3F", "GSAP", "Next.js"],
-        description: "Immersive 3D portfolio with WebGL canvas, post-processing effects, scroll-driven animations, and a custom particle galaxy background.",
-        image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop",
-        featured: false,
-    },
-    {
-        title: "ClubSphere",
+        title: "ClubSphere – College Club Platform",
         slug: "clubsphere",
         role: "Full-Stack Dev",
         year: "2024",
-        tags: ["React Native", "Supabase", "AI", "Mobile"],
-        description: "College club management app with AI quiz generation, daily notifications, event tracking, and role-based access for admins, members, and guests.",
-        image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
+        tags: ["React.js", "TypeScript", "Tailwind CSS", "Supabase", "Gemini API"],
+        description: "Full-stack role-based platform for managing college clubs and events with AI reports.",
+        image: "/projects/clubsphere.png",
+        featured: true,
+    },
+    {
+        title: "SolarFlow Viz",
+        slug: "solarflow-viz",
+        role: "Frontend Dev",
+        year: "2024",
+        tags: ["React.js", "TypeScript", "Three.js", "React Three Fiber", "Tailwind CSS"],
+        description: "Interactive 3D visualization platform for solar energy workflow monitoring.",
+        image: "/projects/solarflow.png",
+        featured: true,
+    },
+    {
+        title: "Studify-OS",
+        slug: "studify-os",
+        role: "Frontend Dev",
+        year: "2023",
+        tags: ["React.js", "TypeScript", "Vite", "Tailwind CSS", "Supabase"],
+        description: "OS-style student workspace for collaboration, tasks, and communication.",
+        image: "/projects/studify.png",
+        featured: false,
+    },
+    {
+        title: "Codester-Club – Community Platform",
+        slug: "codester-club",
+        role: "Full-Stack Dev",
+        year: "2024",
+        tags: ["React.js", "TypeScript", "Tailwind CSS", "Supabase", "Vercel"],
+        description: "Community platform for college clubs with social and real-time features.",
+        image: "/projects/codester.png",
+        featured: false,
+    },
+    {
+        title: "Notely – Premium Notes App",
+        slug: "notely",
+        role: "Mobile Dev",
+        year: "2023",
+        tags: ["Flutter", "Dart", "Material Design 3"],
+        description: "Cross-platform notes app focused on productivity and premium UI/UX.",
+        image: "/projects/notely.png",
+        featured: false,
+    },
+    {
+        title: "Hi-Tech Portfolio Website",
+        slug: "hi-tech-portfolio",
+        role: "Frontend Dev",
+        year: "2024",
+        tags: ["React.js", "Vite", "Tailwind CSS", "Framer Motion"],
+        description: "Modern animated portfolio showcasing projects, skills, and experience.",
+        image: "/projects/hitech.png",
+        featured: false,
+    },
+    {
+        title: "Catalyst Crew – Company Website",
+        slug: "catalyst-crew",
+        role: "Frontend Dev",
+        year: "2024",
+        tags: ["React.js", "TypeScript", "Tailwind CSS", "Vite", "Vercel"],
+        description: "Official website for Catalyst Crew highlighting services and team.",
+        image: "/projects/catalyst.png",
+        featured: false,
+    },
+    {
+        title: "Invoicyy – GST Billing System",
+        slug: "invoicyy",
+        role: "Python Dev",
+        year: "2024",
+        tags: ["Python", "Streamlit", "SQLite", "ReportLab"],
+        description: "GST-compliant billing system for Indian businesses (desktop + web).",
+        image: "/projects/invoicyy.png",
+        featured: false,
+    },
+    {
+        title: "TaskFlow - Advanced Kanban Board",
+        slug: "taskflow",
+        role: "Full-Stack Dev",
+        year: "2024",
+        tags: ["TypeScript", "React.js", "Tailwind CSS", "Node.js", "Express.js"],
+        description: "Next-gen Kanban with TypeScript, React & Tailwind. Organize smart. Move fast. Visualize everything.",
+        image: "/projects/taskflow.png",
+        featured: true,
+    },
+    {
+        title: "AJ Verse: To-Do",
+        slug: "ajverse-todo",
+        role: "Full-Stack Dev",
+        year: "2023",
+        tags: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT"],
+        description: "A full-stack productivity app with JWT auth, drag & drop, and analytics.",
+        image: "/projects/todo.png",
+        featured: false,
+    },
+    {
+        title: "AJVerse: Piano",
+        slug: "ajverse-piano",
+        role: "Frontend Dev",
+        year: "2023",
+        tags: ["React.js", "TypeScript", "Vite", "Tailwind CSS", "Web Audio API"],
+        description: "Responsive 88-key piano app with real-time audio synthesis and animations.",
+        image: "/projects/piano.png",
+        featured: false,
+    },
+    {
+        title: "AJVerse: SynapTic",
+        slug: "ajverse-synaptic",
+        role: "Frontend Dev",
+        year: "2023",
+        tags: ["React.js", "TypeScript", "Tailwind CSS", "AI"],
+        description: "Intelligent AI-powered Tic Tac Toe with sleek responsive UI.",
+        image: "/projects/synaptic.png",
+        featured: false,
+    },
+    {
+        title: "QuickTools Hub",
+        slug: "quicktools-hub",
+        role: "Frontend Dev",
+        year: "2023",
+        tags: ["React.js", "TypeScript", "Vite", "Tailwind CSS"],
+        description: "Collection of fast web tools: counters, color changers, todos, and weather.",
+        image: "/projects/quicktools.png",
+        featured: false,
+    },
+    {
+        title: "Happy Diwali ✨️",
+        slug: "happy-diwali",
+        role: "Frontend Dev",
+        year: "2023",
+        tags: ["HTML5", "CSS3", "JavaScript", "PWA"],
+        description: "Interactive festival web app with beautiful animations and sound effects.",
+        image: "/projects/diwali.png",
         featured: false,
     },
 ];
 
-const allTags = ["All", "React", "Python", "ML", "IoT", "Three.js", "Mobile", "Security"];
+const allTags = ["All", "React.js", "TypeScript", "Tailwind CSS", "Node.js", "Python", "Mobile", "Three.js"];
 
 export default function WorkPage() {
     const [activeTag, setActiveTag] = useState("All");
@@ -83,16 +163,17 @@ export default function WorkPage() {
     ];
 
     return (
-        <div className="w-full min-h-screen px-6 md:px-24 pt-32 pb-40">
+        <div className="w-full min-h-screen px-4 md:px-24 pt-24 md:pt-32 pb-40">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
             >
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4 text-white">
+                <span className="font-mono text-xs md:text-sm tracking-widest uppercase text-gray-500 mb-2 block">Projects</span>
+                <h1 className="text-4xl md:text-7xl font-bold tracking-tighter mb-4 text-white">
                     Selected Work
                 </h1>
-                <p className="text-gray-400 text-lg max-w-xl mb-10">
+                <p className="text-gray-400 text-base md:text-lg max-w-xl mb-10">
                     A curated showcase of AI-driven, interactive, and production-grade web applications.
                 </p>
 
@@ -103,8 +184,8 @@ export default function WorkPage() {
                             key={tag}
                             onClick={() => setActiveTag(tag)}
                             className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all cursor-none ${activeTag === tag
-                                    ? "bg-white text-black"
-                                    : "glass text-gray-300 hover:text-white hover:bg-white/10"
+                                ? "bg-white text-black"
+                                : "glass text-gray-300 hover:text-white hover:bg-white/10"
                                 }`}
                         >
                             {tag}
@@ -134,7 +215,7 @@ export default function WorkPage() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true, margin: "-100px" }}
                                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                                className="w-full md:w-2/3 h-[300px] md:h-[500px] relative rounded-3xl overflow-hidden glass"
+                                className="w-full md:w-2/3 h-[250px] md:h-[500px] relative rounded-3xl overflow-hidden glass shrink-0"
                             >
                                 <div
                                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
@@ -142,7 +223,7 @@ export default function WorkPage() {
                                 />
                                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
                                 {/* Tags on image */}
-                                <div className="absolute top-6 left-6 flex gap-2 flex-wrap">
+                                <div className="absolute top-6 left-6 flex gap-2 flex-wrap max-w-[80%]">
                                     {project.tags.map((tag) => (
                                         <span key={tag} className="glass px-3 py-1 text-xs text-gray-300 rounded-full font-mono">
                                             {tag}
@@ -159,14 +240,14 @@ export default function WorkPage() {
                                 className="w-full md:w-1/3 flex flex-col justify-between"
                             >
                                 <div>
-                                    <div className="flex items-center justify-between mb-4 text-sm font-mono text-gray-400 border-b border-white/10 pb-4">
+                                    <div className="flex items-center justify-between mb-4 text-xs md:text-sm font-mono text-gray-400 border-b border-white/10 pb-4">
                                         <span>{project.role}</span>
                                         <span>{project.year}</span>
                                     </div>
-                                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 group-hover:text-amber-400 transition-colors duration-300">
+                                    <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 group-hover:text-amber-400 transition-colors duration-300">
                                         {project.title}
                                     </h2>
-                                    <p className="text-gray-400 text-sm leading-relaxed">{project.description}</p>
+                                    <p className="text-gray-400 text-sm md:text-base leading-relaxed">{project.description}</p>
                                 </div>
 
                                 <div className="mt-8 flex items-center gap-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-4 group-hover:translate-x-0">

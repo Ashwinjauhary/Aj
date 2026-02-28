@@ -2,23 +2,32 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowUpRight, Download, MapPin, Coffee, Music, Code2, Heart, Zap } from "lucide-react";
+import { ArrowUpRight, Download, MapPin, Code2, Zap, Briefcase, Users } from "lucide-react";
 import Magnetic from "@/components/global/Magnetic";
 
-const funFacts = [
-    { emoji: "☕", text: "Runs on chai, not coffee" },
-    { emoji: "🎵", text: "Lo-fi beats while coding" },
-    { emoji: "🌙", text: "Night owl. Best code after midnight" },
-    { emoji: "🏏", text: "Cricket fan — RCB forever" },
-    { emoji: "⚡", text: "Built first app in 2022" },
-    { emoji: "🎮", text: "CS2 for stress relief" },
+const values = [
+    { icon: <Code2 size={20} />, title: "Web Development", desc: "Building modern, responsive applications" },
+    { icon: <Zap size={20} />, title: "Problem Solving", desc: "Finding elegant solutions to complex problems" },
+    { icon: <Briefcase size={20} />, title: "Business & Stocks", desc: "Strategic thinking and market analysis" },
+    { icon: <Users size={20} />, title: "Leadership", desc: "Guiding teams and organizing events" },
 ];
 
-const values = [
-    { icon: <Code2 size={20} />, title: "Ship First, Refine Later", desc: "A working v1 beats a perfect idea stuck in planning." },
-    { icon: <Zap size={20} />, title: "Speed is a Feature", desc: "Fast code, fast designs, fast iterations. Momentum > perfection." },
-    { icon: <Heart size={20} />, title: "Design Matters Deeply", desc: "The interface IS the product. Ugly tools don't get used." },
-    { icon: <Coffee size={20} />, title: "Learn in Public", desc: "I share what I build. Feedback makes me better." },
+const journey = [
+    {
+        year: "2024",
+        title: "Started BCA Journey",
+        desc: "Joined PSIT Kanpur with determination to excel",
+    },
+    {
+        year: "2024-Q4",
+        title: "Technical Growth",
+        desc: "Learning React, JavaScript, and modern development tools",
+    },
+    {
+        year: "2025",
+        title: "Full-Stack Focus",
+        desc: "Expanding into backend technologies and industry preparation",
+    },
 ];
 
 export default function AboutPage() {
@@ -27,30 +36,31 @@ export default function AboutPage() {
             <div className="max-w-5xl mx-auto">
 
                 {/* Hero */}
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mb-24">
-                    <span className="text-gray-500 font-mono text-sm tracking-widest uppercase">About</span>
-                    <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-white mt-4 mb-6">
-                        Hey, I'm Vansh.
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mb-16 md:mb-24">
+                    <span className="text-gray-500 font-mono text-sm tracking-widest uppercase">About Me</span>
+                    <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter text-white mt-4 mb-6 leading-tight">
+                        Hi, I'm Ashwin Jauhary
                     </h1>
-                    <div className="flex items-center gap-2 text-gray-400 mb-8">
-                        <MapPin size={14} />
-                        <span className="text-sm">Kanpur, Uttar Pradesh, India</span>
-                        <span className="text-white/20 mx-2">·</span>
-                        <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                        <span className="text-sm text-green-400">Open to opportunities</span>
+                    <div className="flex items-center gap-2 text-gray-400 mb-8 flex-wrap">
+                        <span className="glass px-3 py-1 rounded-full text-[10px] md:text-xs font-mono text-amber-400">BCA Student</span>
+                        <span className="glass px-3 py-1 rounded-full text-[10px] md:text-xs font-mono text-blue-400">Web Developer</span>
+                        <span className="glass px-3 py-1 rounded-full text-[10px] md:text-xs font-mono text-green-400">Tech Enthusiast</span>
+                        <span className="text-white/20 mx-2 hidden md:inline">·</span>
+                        <div className="flex items-center gap-2 mt-2 md:mt-0 w-full md:w-auto">
+                            <MapPin size={14} />
+                            <span className="text-xs md:text-sm">Kanpur, Uttar Pradesh, India</span>
+                        </div>
                     </div>
-                    <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mb-4">
-                        I'm a 2nd-year BCA student who decided not to wait for a degree to start building real things.
-                        Since 2022, I've shipped AI-integrated apps, autonomous robots, mobile apps, and immersive 3D web experiences.
+                    <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-4">
+                        I'm a 2nd-year BCA student at PSIT Kanpur. I love building modern, responsive, and interactive web applications. My long-term goal is to achieve academic excellence, secure a good placement, start my own business, and grow in the stock & investment world.
                     </p>
-                    <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mb-10">
-                        My obsession: making things that feel <em className="text-white not-italic font-semibold">alive</em> — interfaces that respond,
-                        animations that breathe, and code that solves problems people actually have.
+                    <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-10">
+                        Exploring technology, building projects, and aiming for a future in business & investments.
                     </p>
                     <div className="flex gap-4 flex-wrap">
                         <Magnetic>
                             <a
-                                href="/Vansh_Agnihotri_Resume.pdf"
+                                href="/Ashwin_Jauhary_Resume.pdf"
                                 download
                                 className="group flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-semibold text-sm hover:bg-gray-200 transition-colors cursor-none"
                             >
@@ -59,28 +69,27 @@ export default function AboutPage() {
                             </a>
                         </Magnetic>
                         <Magnetic>
-                            <Link href="/contact" className="flex items-center gap-2 glass border border-white/20 text-white px-6 py-3 rounded-full font-semibold text-sm hover:bg-white/10 transition-colors cursor-none">
-                                Let's Talk <ArrowUpRight size={14} />
+                            <Link href="/work" className="flex items-center gap-2 glass border border-white/20 text-white px-6 py-3 rounded-full font-semibold text-sm hover:bg-white/10 transition-colors cursor-none">
+                                Explore Projects <ArrowUpRight size={14} />
                             </Link>
                         </Magnetic>
                     </div>
                 </motion.div>
 
                 {/* Photo + Bio Grid */}
-                <div className="grid md:grid-cols-2 gap-12 mb-24">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16 md:mb-24">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="glass rounded-3xl h-80 flex items-center justify-center border border-white/10 overflow-hidden relative"
+                        className="glass rounded-3xl h-64 md:h-80 flex items-center justify-center border border-white/10 overflow-hidden relative group"
                     >
-                        <div className="text-center">
-                            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-amber-400/30 to-blue-600/30 border border-white/20 mx-auto mb-4 flex items-center justify-center text-5xl font-extrabold text-white">
-                                V
-                            </div>
-                            <p className="text-gray-400 text-sm">Photo coming soon 📸</p>
-                        </div>
+                        <img
+                            src="/profile.png"
+                            alt="Ashwin Jauhary"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
                     </motion.div>
 
                     <motion.div
@@ -91,26 +100,50 @@ export default function AboutPage() {
                         className="flex flex-col justify-center space-y-4"
                     >
                         {[
-                            { label: "Name", value: "Vansh Agnihotri" },
-                            { label: "Location", value: "Kanpur, UP, India" },
-                            { label: "Education", value: "BCA, 2nd Year" },
-                            { label: "Focus", value: "React, Next.js, AI & 3D Web" },
-                            { label: "Status", value: "Available for freelance & internships" },
-                            { label: "Email", value: "vanshagnihotri520@gmail.com" },
+                            { label: "Education", value: "BCA @ PSIT Kanpur (2024–2027)", emoji: "🎓" },
+                            { label: "Interests", value: "Web Development, Business, Stocks, AI", emoji: "💡" },
+                            { label: "Hobbies", value: "Gym, Tech Projects, Leadership", emoji: "🏋️" },
+                            { label: "Email", value: "ashwin2431333@gmail.com", emoji: "✉️" },
                         ].map((item) => (
                             <div key={item.label} className="flex items-start gap-4 border-b border-white/5 pb-3">
-                                <span className="text-gray-500 text-sm font-mono w-28 shrink-0">{item.label}</span>
-                                <span className="text-white text-sm">{item.value}</span>
+                                <span className="text-xl shrink-0">{item.emoji}</span>
+                                <div className="flex flex-col">
+                                    <span className="text-gray-500 text-xs font-mono uppercase tracking-wider">{item.label}</span>
+                                    <span className="text-white text-sm mt-1">{item.value}</span>
+                                </div>
                             </div>
                         ))}
                     </motion.div>
                 </div>
 
-                {/* Values */}
+                {/* Stats */}
+                <section className="mb-24">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        {[
+                            { value: "5+", label: "Programming Languages" },
+                            { value: "10+", label: "Projects Built" },
+                            { value: "15+", label: "Technologies Learned" },
+                        ].map((stat, i) => (
+                            <motion.div
+                                key={stat.label}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                className="glass p-8 rounded-2xl text-center flex flex-col items-center justify-center"
+                            >
+                                <span className="text-4xl md:text-5xl font-extrabold text-white mb-2">{stat.value}</span>
+                                <span className="text-gray-400 text-sm">{stat.label}</span>
+                            </motion.div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Values -> What I Love */}
                 <section className="mb-24">
                     <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mb-10">
-                        <span className="font-mono text-xs text-gray-500 tracking-widest uppercase">Philosophy</span>
-                        <h2 className="text-4xl font-bold text-white mt-2">How I Think</h2>
+                        <span className="font-mono text-xs text-gray-500 tracking-widest uppercase">Passions</span>
+                        <h2 className="text-4xl font-bold text-white mt-2">What I Love</h2>
                     </motion.div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {values.map((v, i) => (
@@ -130,25 +163,26 @@ export default function AboutPage() {
                     </div>
                 </section>
 
-                {/* Fun Facts Carousel */}
+                {/* My Journey Timeline */}
                 <section className="mb-24">
                     <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mb-10">
-                        <span className="font-mono text-xs text-gray-500 tracking-widest uppercase">Beyond Code</span>
-                        <h2 className="text-4xl font-bold text-white mt-2">Fun Facts</h2>
+                        <span className="font-mono text-xs text-gray-500 tracking-widest uppercase">Timeline</span>
+                        <h2 className="text-4xl font-bold text-white mt-2">My Journey</h2>
                     </motion.div>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                        {funFacts.map((fact, i) => (
+                    <div className="relative border-l border-white/20 pl-8 ml-4 md:ml-2 space-y-12">
+                        {journey.map((item, index) => (
                             <motion.div
-                                key={i}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
+                                key={index}
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: i * 0.07 }}
-                                whileHover={{ scale: 1.03, y: -3 }}
-                                className="glass p-5 rounded-2xl text-center cursor-none"
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                className="relative"
                             >
-                                <span className="text-3xl block mb-2">{fact.emoji}</span>
-                                <p className="text-gray-300 text-sm">{fact.text}</p>
+                                <div className="absolute w-4 h-4 bg-amber-400 rounded-full -left-[41px] top-1 shadow-[0_0_10px_rgba(251,191,36,0.5)]" />
+                                <span className="font-mono text-sm tracking-widest text-amber-400">{item.year}</span>
+                                <h3 className="text-2xl font-bold text-white mt-1 mb-2">{item.title}</h3>
+                                <p className="text-gray-400 leading-relaxed text-sm">{item.desc}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -159,11 +193,15 @@ export default function AboutPage() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="glass rounded-3xl p-10 md:p-14 text-center border border-white/10"
+                    className="glass rounded-3xl p-10 md:p-14 text-center border border-white/10 relative overflow-hidden"
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Want to collaborate?</h2>
-                    <p className="text-gray-400 mb-8 max-w-xl mx-auto">I'm always open to learning from senior devs, working on challenging projects, and contributing to meaningful products.</p>
-                    <Link href="/contact" className="inline-block bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition-colors cursor-none">
+                    <div className="absolute -top-24 -right-24 w-64 h-64 bg-amber-500/10 blur-[100px] rounded-full pointer-events-none" />
+                    <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-500/10 blur-[100px] rounded-full pointer-events-none" />
+
+                    <span className="text-4xl block mb-6">🚀</span>
+                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Ready to Build Something Amazing</h2>
+                    <p className="text-gray-400 mb-8 max-w-xl mx-auto">Always eager to take on new challenges and collaborate on innovative projects.</p>
+                    <Link href="/contact" className="relative z-10 inline-block bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition-colors cursor-none">
                         Get In Touch
                     </Link>
                 </motion.div>

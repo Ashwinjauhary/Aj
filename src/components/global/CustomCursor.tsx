@@ -1,19 +1,29 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function CustomCursor() {
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
-    const [isTouch, setIsTouch] = useState(true); // hidden by default until desktop confirmed
+    const [isTouch, setIsTouch] = useState(true);
+
+    // Using useMotionValue avoids React state updates (re-renders) on every mouse movement
+    const cursorX = useMotionValue(-100);
+    const cursorY = useMotionValue(-100);
+
+    const springConfig = { damping: 25, stiffness: 300, mass: 0.5 };
+    const cursorXSpring = useSpring(cursorX, springConfig);
+    const cursorYSpring = useSpring(cursorY, springConfig);
 
     useEffect(() => {
-        // Only show on non-touch devices
-        setIsTouch(window.matchMedia("(hover: none)").matches);
+        const checkTouch = () => {
+            return window.matchMedia("(hover: none)").matches || window.innerWidth < 768;
+        };
+        setIsTouch(checkTouch());
 
         const updateMousePosition = (e: MouseEvent) => {
-            setMousePosition({ x: e.clientX, y: e.clientY });
+            cursorX.set(e.clientX);
+            cursorY.set(e.clientY);
         };
 
         const handleMouseOver = (e: MouseEvent) => {
@@ -41,40 +51,35 @@ export default function CustomCursor() {
 
     if (isTouch) return null;
 
-    const variants = {
-        default: {
-            x: mousePosition.x - 16,
-            y: mousePosition.y - 16,
-            scale: 1,
-            backgroundColor: "transparent",
-            border: "2px solid rgba(255, 255, 255, 0.5)",
-        },
-        hover: {
-            x: mousePosition.x - 32,
-            y: mousePosition.y - 32,
-            scale: 2,
-            backgroundColor: "rgba(255, 255, 255, 0.1)",
-            border: "1px solid rgba(255, 255, 255, 0.8)",
-            backdropFilter: "blur(4px)",
-        },
-    };
-
     return (
         <>
             <motion.div
                 className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9999] mix-blend-difference"
-                variants={variants}
-                animate={isHovering ? "hover" : "default"}
+                style={{
+                    x: cursorXSpring,
+                    y: cursorYSpring,
+                    translateX: "-50%",
+                    translateY: "-50%"
+                }}
+                animate={{
+                    scale: isHovering ? 2 : 1,
+                    backgroundColor: isHovering ? "rgba(255, 255, 255, 0.1)" : "transparent",
+                    border: isHovering ? "1px solid rgba(255, 255, 255, 0.8)" : "2px solid rgba(255, 255, 255, 0.5)",
+                    backdropFilter: isHovering ? "blur(4px)" : "none",
+                }}
                 transition={{
                     type: "tween",
                     ease: "backOut",
                     duration: 0.15,
                 }}
             />
-            <div
+            <motion.div
                 className="fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-[10000] mix-blend-difference"
                 style={{
-                    transform: `translate(${mousePosition.x - 4}px, ${mousePosition.y - 4}px)`,
+                    x: cursorX,
+                    y: cursorY,
+                    translateX: "-50%",
+                    translateY: "-50%"
                 }}
             />
         </>

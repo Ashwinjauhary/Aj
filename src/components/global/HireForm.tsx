@@ -105,8 +105,8 @@ export default function HireForm() {
                             type="button"
                             onClick={() => setForm({ ...form, type: t })}
                             className={`px-4 py-2 rounded-full text-sm font-medium transition-all cursor-none ${form.type === t
-                                    ? "bg-white text-black"
-                                    : "glass text-gray-300 hover:bg-white/10"
+                                ? "bg-white text-black"
+                                : "glass text-gray-300 hover:bg-white/10"
                                 }`}
                         >
                             {t}
@@ -130,7 +130,7 @@ export default function HireForm() {
             {status === "error" && (
                 <div className="flex items-center gap-2 text-red-400 text-sm">
                     <AlertCircle size={16} />
-                    Something went wrong. Try emailing directly at vanshagnihotri520@gmail.com
+                    Something went wrong. Try emailing directly at ashwin2431333@gmail.com
                 </div>
             )}
 

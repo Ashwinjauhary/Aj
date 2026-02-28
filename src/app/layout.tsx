@@ -12,10 +12,13 @@ import ThemeToggle from "@/components/global/ThemeToggle";
 import SoundToggle from "@/components/global/SoundToggle";
 import KonamiCode from "@/components/global/KonamiCode";
 import JsonLd from "@/components/global/JsonLd";
+import NoiseTexture from "@/components/global/NoiseTexture";
+import ClientExtras from "@/components/global/ClientExtras";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
-const BASE_URL = "https://vanshagnihotri.vercel.app";
+const BASE_URL = "https://ashwinjauhary.vercel.app";
 
 export const viewport: Viewport = {
   themeColor: "#050505",
@@ -27,38 +30,38 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Vansh Agnihotri — Portfolio",
-    template: "%s | Vansh Agnihotri",
+    default: "Ashwin Jauhary — Portfolio",
+    template: "%s | Ashwin Jauhary",
   },
   description:
-    "BCA Student, React Developer & Digital Creator building next-level interactive web experiences with AI, 3D, and beautiful design.",
+    "BCA Student, Web Developer & Tech Enthusiast exploring technology, building projects, and aiming for a future in business & investments.",
   keywords: [
-    "Vansh Agnihotri", "React Developer", "Next.js", "Portfolio",
-    "BCA Student", "Frontend Developer", "Three.js", "AI Developer",
-    "UI/UX", "Webflow", "India",
+    "Ashwin Jauhary", "React Developer", "Next.js", "Portfolio",
+    "BCA Student", "Web Developer", "Three.js", "Full Stack Developer",
+    "UI/UX", "India", "Kanpur",
   ],
-  authors: [{ name: "Vansh Agnihotri", url: BASE_URL }],
-  creator: "Vansh Agnihotri",
+  authors: [{ name: "Ashwin Jauhary", url: BASE_URL }],
+  creator: "Ashwin Jauhary",
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: BASE_URL,
-    siteName: "Vansh Agnihotri Portfolio",
-    title: "Vansh Agnihotri — Next-Level Portfolio",
-    description: "BCA Student, React Developer & Digital Creator building next-level web experiences.",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Vansh Agnihotri" }],
+    siteName: "Ashwin Jauhary Portfolio",
+    title: "Ashwin Jauhary — Portfolio",
+    description: "BCA Student, Web Developer & Tech Enthusiast building innovative web experiences.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Ashwin Jauhary" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vansh Agnihotri — Portfolio",
-    description: "BCA Student, React Developer & Digital Creator.",
+    title: "Ashwin Jauhary — Portfolio",
+    description: "BCA Student, Web Developer & Tech Enthusiast.",
     images: ["/og-image.png"],
   },
   manifest: "/manifest.json",
   icons: {
-    icon: [{ url: "/icons/icon.svg", type: "image/svg+xml" }],
-    apple: [{ url: "/icons/icon.svg" }],
-    shortcut: "/icons/icon.svg",
+    icon: [{ url: "/icons/icon.png", type: "image/png" }],
+    apple: [{ url: "/icons/icon.png" }],
+    shortcut: "/icons/icon.png",
   },
   robots: { index: true, follow: true },
 };
@@ -68,16 +71,17 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="dark">
-      <head>
+      <head suppressHydrationWarning>
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="Vansh" />
+        <meta name="apple-mobile-web-app-title" content="Ashwin" />
         <JsonLd />
       </head>
       <body className={`${inter.className} min-h-screen bg-transparent antialiased`}>
         <ScrollProgressBar />
         <ServiceWorkerRegistrar />
         <KonamiCode />
+        <NoiseTexture />
         <SmoothScroll>
           <CustomCursor />
           <CursorTrail />
@@ -85,10 +89,12 @@ export default function RootLayout({
           <FloatingDock />
           <ThemeToggle />
           <SoundToggle />
-          <main className="relative z-10 w-full flex flex-col items-center">
+          <ClientExtras />
+          <main className="w-full flex flex-col items-center">
             {children}
           </main>
         </SmoothScroll>
+        <Analytics />
       </body>
     </html>
   );

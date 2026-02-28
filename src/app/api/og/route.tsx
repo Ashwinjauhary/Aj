@@ -5,8 +5,8 @@ export const runtime = "edge";
 
 export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.url);
-    const title = searchParams.get("title") ?? "Vansh Agnihotri";
-    const subtitle = searchParams.get("subtitle") ?? "BCA Student · React Developer · Digital Creator";
+    const title = searchParams.get("title") ?? "Ashwin Jauhary";
+    const subtitle = searchParams.get("subtitle") ?? "BCA Student · Web Developer · Tech Enthusiast";
     const tag = searchParams.get("tag") ?? "";
 
     return new ImageResponse(
@@ -100,11 +100,11 @@ export async function GET(req: NextRequest) {
                         fontWeight: 800,
                         color: "white",
                     }}>
-                        V
+                        A
                     </div>
                     <div>
-                        <div style={{ color: "white", fontWeight: 600, fontSize: 18 }}>Vansh Agnihotri</div>
-                        <div style={{ color: "rgba(156,163,175,1)", fontSize: 14 }}>vanshagnihotri.vercel.app</div>
+                        <div style={{ color: "white", fontWeight: 600, fontSize: 18 }}>Ashwin Jauhary</div>
+                        <div style={{ color: "rgba(156,163,175,1)", fontSize: 14 }}>ashwinjauhary.vercel.app</div>
                     </div>
                 </div>
             </div>

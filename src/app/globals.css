@@ -9,6 +9,101 @@
     --glass-bg: rgba(15, 15, 15, 0.4);
   }
 
+  /* Light mode overrides */
+  html.light {
+    --background: #f0ede6;
+    --foreground: #111111;
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-bg: rgba(255, 255, 250, 0.65);
+    color-scheme: light;
+  }
+
+  html.light body {
+    background-color: var(--background);
+    color: #111111;
+  }
+
+  /* Text */
+  html.light .text-white {
+    color: #111111 !important;
+  }
+
+  html.light .text-gray-100 {
+    color: #1c1c1c !important;
+  }
+
+  html.light .text-gray-200 {
+    color: #2a2a2a !important;
+  }
+
+  html.light .text-gray-300 {
+    color: #3d3d3d !important;
+  }
+
+  html.light .text-gray-400 {
+    color: #595959 !important;
+  }
+
+  html.light .text-gray-500 {
+    color: #777777 !important;
+  }
+
+  html.light .text-gray-600 {
+    color: #888888 !important;
+  }
+
+  /* Glass */
+  html.light .glass,
+  html.light .glass-panel {
+    background-color: rgba(255, 255, 250, 0.7) !important;
+    border-color: rgba(0, 0, 0, 0.09) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06) !important;
+  }
+
+  /* Borders */
+  html.light .border-white\/5 {
+    border-color: rgba(0, 0, 0, 0.05) !important;
+  }
+
+  html.light .border-white\/10 {
+    border-color: rgba(0, 0, 0, 0.08) !important;
+  }
+
+  html.light .border-white\/15 {
+    border-color: rgba(0, 0, 0, 0.10) !important;
+  }
+
+  html.light .border-white\/20 {
+    border-color: rgba(0, 0, 0, 0.12) !important;
+  }
+
+  /* Hover ghost backgrounds */
+  html.light .hover\:bg-white\/5:hover {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+  }
+
+  html.light .hover\:bg-white\/10:hover {
+    background-color: rgba(0, 0, 0, 0.07) !important;
+  }
+
+  /* Dim 3D canvas so light background shows */
+  html.light canvas {
+    opacity: 0.08 !important;
+  }
+
+  /* Gradient text */
+  html.light .text-gradient {
+    background-image: linear-gradient(to right, #111111, #555555) !important;
+  }
+
+  /* Smooth transitions on theme change */
+  *,
+  *::before,
+  *::after {
+    transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+
+
   * {
     box-sizing: border-box;
   }

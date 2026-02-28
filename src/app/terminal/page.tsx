@@ -4,18 +4,18 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const BOOT_SEQUENCE = [
-    "VanshOS v3.0 — Booting...",
+    "AshwinOS v3.0 — Booting...",
     "Loading kernel modules...",
     "Mounting filesystem: OK",
     "Initializing network interfaces: OK",
     "Loading AI subsystems: OK",
-    "Welcome to VanshOS. Type 'help' to begin.",
+    "Welcome to AshwinOS. Type 'help' to begin.",
 ];
 
 const COMMANDS: Record<string, () => string[]> = {
     help: () => [
         "Available commands:",
-        "  about      — Who is Vansh?",
+        "  about      — Who is Ashwin?",
         "  skills     — View tech stack",
         "  projects   — List projects",
         "  contact    — Get contact info",
@@ -27,7 +27,7 @@ const COMMANDS: Record<string, () => string[]> = {
         "  exit       — Go back",
     ],
     about: () => [
-        "Vansh Agnihotri",
+        "Ashwin Jauhary",
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━",
         "Location  : Kanpur, UP, India",
         "Education : BCA, 2nd Year",
@@ -56,10 +56,10 @@ const COMMANDS: Record<string, () => string[]> = {
     contact: () => [
         "Contact Info:",
         "━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-        "Email    : vanshagnihotri520@gmail.com",
+        "Email    : ashwin2431333@gmail.com",
         "GitHub   : github.com/Ashwinjauhary",
-        "LinkedIn : linkedin.com/in/vansh-agnihotri",
-        "Phone    : +91 98765 43210",
+        "LinkedIn : linkedin.com/in/",
+        "Phone    : +91 95556 81211",
     ],
     blog: () => [
         "Latest Posts:",
@@ -76,7 +76,7 @@ const COMMANDS: Record<string, () => string[]> = {
         "✓ Internships (remote or hybrid)",
         "✓ Hackathon team collaborations",
         "✓ Open source contributions",
-        "→ Email: vanshagnihotri520@gmail.com",
+        "→ Email: ashwin2431333@gmail.com",
         "→ Or visit /contact",
     ],
     joke: () => {
@@ -89,11 +89,11 @@ const COMMANDS: Record<string, () => string[]> = {
         return jokes[Math.floor(Math.random() * jokes.length)];
     },
     matrix: () => ["Wake up, Neo...", "The Matrix has you...", "Follow the white rabbit 🐇", "→ Just kidding. But keep building."],
-    whoami: () => ["vansh@vansh-portfolio:~$ You are a visitor curious enough to open the terminal. Respect."],
+    whoami: () => ["ashwin@ashwin-portfolio:~$ You are a visitor curious enough to open the terminal. Respect."],
     ls: () => ["about/  blog/  work/  journey/  contact/  playground/  secret/"],
-    pwd: () => ["/home/vansh/portfolio"],
+    pwd: () => ["/home/ashwin/portfolio"],
     date: () => [new Date().toString()],
-    uname: () => ["VanshOS 3.0 — Built on Next.js 16, Three.js, Framer Motion"],
+    uname: () => ["AshwinOS 3.0 — Built on Next.js 16, Three.js, Framer Motion"],
 };
 
 export default function TerminalPage() {
@@ -119,7 +119,7 @@ export default function TerminalPage() {
 
     const run = (cmd: string) => {
         const trimmed = cmd.trim().toLowerCase();
-        setLines(prev => [...prev, { type: "cmd", text: `vansh@portfolio:~$ ${cmd}` }]);
+        setLines(prev => [...prev, { type: "cmd", text: `ashwin@portfolio:~$ ${cmd}` }]);
         if (!trimmed) return;
         setHistory(prev => [trimmed, ...prev]);
         setHistIdx(-1);
@@ -142,7 +142,7 @@ export default function TerminalPage() {
                         <div className="w-3 h-3 rounded-full bg-red-500/80" />
                         <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
                         <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                        <span className="ml-4 text-gray-400 text-xs font-mono">vansh@portfolio — VanshOS 3.0</span>
+                        <span className="ml-4 text-gray-400 text-xs font-mono">ashwin@portfolio — AshwinOS 3.0</span>
                     </div>
 
                     <div
@@ -168,7 +168,7 @@ export default function TerminalPage() {
 
                                 {/* Input */}
                                 <div className="flex items-center gap-2 mt-2">
-                                    <span className="text-amber-400 shrink-0">vansh@portfolio:~$</span>
+                                    <span className="text-amber-400 shrink-0">ashwin@portfolio:~$</span>
                                     <input
                                         ref={inputRef}
                                         autoFocus

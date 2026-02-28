@@ -40,7 +40,7 @@ const changelog = [
             "/uses page with full tool stack",
             "/now page — current focus areas",
             "/playground with 3 interactive demos",
-            "/terminal — VanshOS 3.0 fake OS",
+            "/terminal — AshwinOS 3.0 fake OS",
             "/blog with 5 posts and newsletter CTA",
             "Like button system with localStorage",
         ],

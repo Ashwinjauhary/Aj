@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const nowItems = [
     { emoji: "📚", label: "Studying", desc: "BCA 2nd year — databases, OS, Java, and computer networks." },
-    { emoji: "🚀", label: "Building", desc: "Vansh Portfolio v2 (this site!) — pushing every limit of Next.js 16 and Three.js." },
+    { emoji: "🚀", label: "Building", desc: "Ashwin Portfolio (this site!) — pushing every limit of Next.js 16 and Three.js." },
     { emoji: "🤖", label: "Exploring", desc: "LLM fine-tuning and building small domain-specific AI tools using Gemini and LangChain." },
     { emoji: "🦀", label: "Learning", desc: "Rust basics — aiming to understand memory safety before trying WebAssembly." },
     { emoji: "🐳", label: "DevOps", desc: "Docker + GitHub Actions — containerising my projects and setting up proper CI/CD pipelines." },
@@ -12,7 +12,7 @@ const nowItems = [
 ];
 
 export default function NowPage() {
-    const lastUpdated = "February 27, 2025";
+    const lastUpdated = "March 1, 2026";
 
     return (
         <div className="w-full min-h-screen px-6 md:px-24 pt-32 pb-40">
