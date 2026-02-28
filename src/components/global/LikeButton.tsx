@@ -17,8 +17,11 @@ export default function LikeButton({ slug, baseCount = 42 }: LikeButtonProps) {
 
     useEffect(() => {
         const stored = localStorage.getItem(key);
-        if (stored) { setLiked(true); setCount(baseCount + 1); }
-    }, [key, baseCount]);
+        if (stored && !liked) {
+            setLiked(true);
+            setCount(baseCount + 1);
+        }
+    }, [key, baseCount, liked]);
 
     const toggle = () => {
         if (liked) {

@@ -16,10 +16,9 @@ export default function CustomCursor() {
     const cursorYSpring = useSpring(cursorY, springConfig);
 
     useEffect(() => {
-        const checkTouch = () => {
-            return window.matchMedia("(hover: none)").matches || window.innerWidth < 768;
-        };
-        setIsTouch(checkTouch());
+        // Initialization does not need setState in effect
+        const match = window.matchMedia("(hover: none)").matches || window.innerWidth < 768;
+        if (match !== isTouch) setIsTouch(match);
 
         const updateMousePosition = (e: MouseEvent) => {
             cursorX.set(e.clientX);

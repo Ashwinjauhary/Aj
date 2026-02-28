@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Music, Pause, Play, Volume2, VolumeX, X, ChevronUp } from "lucide-react";
+import { Music, Pause, Play, Volume2, VolumeX, X } from "lucide-react";
 
 const tracks = [
     { title: "Lo-Fi Study", artist: "ChillHop", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
@@ -26,7 +26,7 @@ export default function MusicPlayer() {
             audioRef.current.loop = false;
         }
         return () => { audioRef.current?.pause(); };
-    }, []);
+    }, [trackIndex, volume]);
 
     useEffect(() => {
         const audio = audioRef.current;
@@ -44,7 +44,7 @@ export default function MusicPlayer() {
         audio.src = tracks[trackIndex].url;
         audio.volume = volume;
         if (playing) audio.play().catch(() => { });
-    }, [trackIndex]);
+    }, [trackIndex, playing, volume]);
 
     useEffect(() => {
         if (!audioRef.current) return;

@@ -35,8 +35,10 @@ export default function Typewriter({ words, speed = 80, deleteSpeed = 40, pause 
             if (displayed.length > 0) {
                 timeout = setTimeout(() => setDisplayed(d => d.slice(0, -1)), deleteSpeed);
             } else {
-                setWordIndex(i => i + 1);
-                setTyping(true);
+                timeout = setTimeout(() => {
+                    setWordIndex(i => i + 1);
+                    setTyping(true);
+                }, deleteSpeed);
             }
         }
         return () => clearTimeout(timeout);

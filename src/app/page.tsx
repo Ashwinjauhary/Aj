@@ -242,10 +242,10 @@ export default function Home() {
           >
             <span className="text-gray-500 text-sm font-mono tracking-widest uppercase">About</span>
             <h2 className="text-4xl md:text-6xl font-bold text-white mt-4 mb-6">
-              Hi, I'm Ashwin Jauhary
+              Hi, I&apos;m Ashwin Jauhary
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-6">
-              I'm a 2nd-year BCA student at PSIT Kanpur. I love building modern, responsive, and interactive web applications. My long-term goal is to achieve academic excellence, secure a good placement, start my own business, and grow in the stock & investment world.
+              I&apos;m a 2nd-year BCA student at PSIT Kanpur. I love building modern, responsive, and interactive web applications. My long-term goal is to achieve academic excellence, secure a good placement, start my own business, and grow in the stock & investment world.
             </p>
             <p className="text-gray-400 text-lg leading-relaxed mb-8">
               My focus: <span className="text-white font-medium">React, Next.js, AI integration, and Scalable Backend</span>.
@@ -313,9 +313,9 @@ export default function Home() {
           </div>
           <div className="glass rounded-3xl p-10 md:p-16 text-center border border-white/10">
             <Sparkles className="mx-auto mb-6 text-amber-400" size={40} />
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">Let's Build Something</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">Let&apos;s Build Something</h2>
             <p className="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
-              I'm always open to freelance projects, collaborations, and internship opportunities.
+              I&apos;m always open to freelance projects, collaborations, and internship opportunities.
             </p>
             <div className="flex items-center justify-center gap-4 flex-wrap">
               <Link href="/contact" className="bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition-colors cursor-none">Get In Touch</Link>

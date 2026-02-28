@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Volume2, VolumeX } from "lucide-react";
 
@@ -8,7 +8,7 @@ export default function SoundToggle() {
     const [enabled, setEnabled] = useState(false);
     const audioCtx = useRef<AudioContext | null>(null);
 
-    const playTick = () => {
+    const playTick = React.useCallback(() => {
         if (!enabled) return;
         if (!audioCtx.current) audioCtx.current = new AudioContext();
         const ctx = audioCtx.current;
@@ -22,7 +22,7 @@ export default function SoundToggle() {
         gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.08);
         osc.start(ctx.currentTime);
         osc.stop(ctx.currentTime + 0.1);
-    };
+    }, [enabled]);
 
     useEffect(() => {
         if (!enabled) return;
@@ -39,7 +39,7 @@ export default function SoundToggle() {
             document.removeEventListener("click", handleClick);
             document.removeEventListener("mouseover", handleHover);
         };
-    }, [enabled]);
+    }, [enabled, playTick]);
 
     return (
         <motion.button

@@ -195,10 +195,9 @@ export default function TerminalPage() {
                                 </div>
                             </>
                         )}
-                        <div ref={bottomRef} />
                     </div>
                 </div>
-                <p className="text-center text-gray-600 text-xs font-mono mt-4">Type 'help' to get started · Arrow keys for history</p>
+                <p className="text-center text-gray-600 text-xs font-mono mt-4">Type &apos;help&apos; to get started · Arrow keys for history</p>
             </div>
         </div>
     );

@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useScroll, motion, useSpring } from "framer-motion";
 
 export default function ScrollProgressBar() {

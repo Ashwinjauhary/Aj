@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle, Circle, Clock, ArrowRight } from "lucide-react";
 
 const roadmap = [
     {

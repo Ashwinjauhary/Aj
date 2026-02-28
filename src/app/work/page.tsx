@@ -328,7 +328,7 @@ export default function WorkPage() {
                     animate={{ opacity: 1 }}
                     className="text-center text-gray-500 py-24"
                 >
-                    No projects found for "{activeTag}".
+                    No projects found for &quot;{activeTag}&quot;.
                 </motion.div>
             )}
         </div>

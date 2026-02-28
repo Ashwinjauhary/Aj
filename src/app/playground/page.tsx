@@ -153,7 +153,7 @@ export default function PlaygroundPage() {
                 <span className="font-mono text-sm text-gray-500 tracking-widest uppercase">Interactive</span>
                 <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-white mt-4 mb-4">Playground</h1>
                 <p className="text-gray-400 text-lg mb-16 max-w-2xl">
-                    Mini-demos, experiments, and fun things I've built to explore CSS, Canvas, and creative coding.
+                    Mini-demos, experiments, and fun things I&apos;ve built to explore CSS, Canvas, and creative coding.
                 </p>
 
                 <div className="flex gap-2 mb-8 flex-wrap">

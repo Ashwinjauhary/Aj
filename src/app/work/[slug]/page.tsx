@@ -23,7 +23,7 @@ const baseProject = (title: string, tag: string, role: string, year: string, des
     links: { github: "https://github.com/Ashwinjauhary", live: "#" },
 });
 
-const caseStudies: Record<string, any> = {
+const caseStudies: Record<string, ReturnType<typeof baseProject>> = {
     "clubsphere": {
         ...baseProject("ClubSphere", "React.js + Supabase", "Full-Stack Dev", "2024", "Full-stack role-based platform for managing college clubs and events with AI reports.", "/projects/clubsphere.png", ["React.js", "TypeScript", "Tailwind CSS", "Supabase", "Gemini API"]),
         problem: "College clubs struggle to manage members, events, and communication across scattered platforms. No unified platform exists for campus clubs.",

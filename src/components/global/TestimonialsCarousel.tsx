@@ -67,7 +67,7 @@ export default function TestimonialsCarousel() {
                     className="glass rounded-3xl p-8 md:p-10 border border-white/10"
                 >
                     <Quote size={32} className="mb-6 opacity-20" style={{ color: t.color }} />
-                    <p className="text-gray-300 text-lg leading-relaxed mb-8 italic">"{t.text}"</p>
+                    <p className="text-gray-300 text-lg leading-relaxed mb-8 italic">&quot;{t.text}&quot;</p>
                     <div className="flex items-center gap-4">
                         <div className="w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold text-white" style={{ background: t.color + "33", border: `1px solid ${t.color}55` }}>
                             {t.avatar}

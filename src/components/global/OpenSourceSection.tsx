@@ -2,12 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Star, GitPullRequest, ExternalLink } from "lucide-react";
-
-interface RepoStars {
-    repo: string;
-    stars: number;
-}
+import { Star, GitPullRequest } from "lucide-react";
 
 const repos = [
     { repo: "Ashwinjauhary/Portfolio", label: "Portfolio", href: "https://github.com/Ashwinjauhary/Portfolio" },
