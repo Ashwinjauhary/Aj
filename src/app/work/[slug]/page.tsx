@@ -3,7 +3,7 @@
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft, Github, ExternalLink, CheckCircle, Clock, User } from "lucide-react";
+import { ArrowLeft, CheckCircle, Clock, User, Github, ExternalLink } from "lucide-react";
 
 // Helper to quickly pad out new projects
 const baseProject = (title: string, tag: string, role: string, year: string, desc: string, image: string, stack: string[]) => ({

@@ -18,7 +18,7 @@ export default function NowPage() {
         <div className="w-full min-h-screen px-6 md:px-24 pt-32 pb-40">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-3xl mx-auto">
                 <span className="font-mono text-sm text-gray-500 tracking-widest uppercase">Now</span>
-                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-white mt-4 mb-4">What I'm Doing Now</h1>
+                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-white mt-4 mb-4">What I&apos;m Doing Now</h1>
                 <p className="text-gray-400 text-sm mb-16 font-mono flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                     Last updated: {lastUpdated} · Inspired by{" "}

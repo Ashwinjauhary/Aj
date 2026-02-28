@@ -47,7 +47,7 @@ export default function CustomCursor() {
             window.removeEventListener("mousemove", updateMousePosition);
             window.removeEventListener("mouseover", handleMouseOver);
         };
-    }, []);
+    }, [cursorX, cursorY]);
 
     if (isTouch) return null;
 

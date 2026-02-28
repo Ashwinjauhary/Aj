@@ -17,12 +17,12 @@ export default function ContactPage() {
                     transition={{ duration: 0.8 }}
                     className="w-full lg:w-5/12 flex flex-col"
                 >
-                    <span className="font-mono text-sm tracking-widest uppercase text-gray-500 mb-2">Let's Connect</span>
+                    <span className="font-mono text-sm tracking-widest uppercase text-gray-500 mb-2">Let&apos;s Connect</span>
                     <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter mb-6 text-white text-glow">
                         Get in Touch
                     </h1>
                     <p className="text-gray-400 text-base md:text-lg mb-12">
-                        I'm always interested in new opportunities, collaborations, and interesting projects. Let's discuss how we can work together!
+                        I&apos;m always interested in new opportunities, collaborations, and interesting projects. Let&apos;s discuss how we can work together!
                     </p>
 
                     <div className="space-y-10">

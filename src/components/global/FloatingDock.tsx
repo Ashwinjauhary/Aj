@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, FolderGit2, Compass, Mail, User, BookOpen, Wrench, Clock, Gamepad2, Terminal, List, ChevronUp } from "lucide-react";
+import { Home, FolderGit2, Compass, Mail, User, BookOpen, Wrench, Clock, Terminal, List, ChevronUp } from "lucide-react";
 import { useState } from "react";
 
 const mainNav = [

@@ -115,8 +115,8 @@ export default function BlogPage() {
                     {subscribed ? (
                         <div>
                             <div className="text-4xl mb-4">🎉</div>
-                            <h2 className="text-2xl font-bold text-white mb-2">You're on the list!</h2>
-                            <p className="text-gray-400">I'll let you know when I publish new articles.</p>
+                            <h2 className="text-2xl font-bold text-white mb-2">You&apos;re on the list!</h2>
+                            <p className="text-gray-400">I&apos;ll let you know when I publish new articles.</p>
                         </div>
                     ) : (
                         <>

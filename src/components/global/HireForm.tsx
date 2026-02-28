@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, CheckCircle, AlertCircle, Loader } from "lucide-react";
+import { AlertCircle, CheckCircle, Send, Loader } from "lucide-react";
 
 interface FormData {
     name: string;

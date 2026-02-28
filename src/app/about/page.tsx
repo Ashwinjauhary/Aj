@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Download, MapPin, Code2, Zap, Briefcase, Users } from "lucide-react";
 import Magnetic from "@/components/global/Magnetic";
 
@@ -39,7 +40,7 @@ export default function AboutPage() {
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mb-16 md:mb-24">
                     <span className="text-gray-500 font-mono text-sm tracking-widest uppercase">About Me</span>
                     <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter text-white mt-4 mb-6 leading-tight">
-                        Hi, I'm Ashwin Jauhary
+                        Hi, I&apos;m Ashwin Jauhary
                     </h1>
                     <div className="flex items-center gap-2 text-gray-400 mb-8 flex-wrap">
                         <span className="glass px-3 py-1 rounded-full text-[10px] md:text-xs font-mono text-amber-400">BCA Student</span>
@@ -52,7 +53,7 @@ export default function AboutPage() {
                         </div>
                     </div>
                     <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-4">
-                        I'm a 2nd-year BCA student at PSIT Kanpur. I love building modern, responsive, and interactive web applications. My long-term goal is to achieve academic excellence, secure a good placement, start my own business, and grow in the stock & investment world.
+                        I&apos;m a 2nd-year BCA student at PSIT Kanpur. I love building modern, responsive, and interactive web applications. My long-term goal is to achieve academic excellence, secure a good placement, start my own business, and grow in the stock & investment world.
                     </p>
                     <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-10">
                         Exploring technology, building projects, and aiming for a future in business & investments.
@@ -85,9 +86,11 @@ export default function AboutPage() {
                         transition={{ duration: 0.8 }}
                         className="glass rounded-3xl h-64 md:h-80 flex items-center justify-center border border-white/10 overflow-hidden relative group"
                     >
-                        <img
+                        <Image
                             src="/profile.png"
                             alt="Ashwin Jauhary"
+                            width={500}
+                            height={500}
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                     </motion.div>
